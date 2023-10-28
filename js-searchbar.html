@@ -144,7 +144,7 @@
 
     let loginBtn = document.createElement('button')
     loginBtn.setAttribute('class', 'border-white  text-white border p-2 rounded-md ')
-    loginBtn.textContent ='Login'
+    loginBtn.textContent = 'Login'
     nav.appendChild(loginBtn)
 
 
@@ -215,14 +215,16 @@
     let check = Number(btn1.getAttribute('value'))
     console.log(check);
     btn1.textContent = 'Day mode'
+    ul.classList.toggle('text-black')
 
     btn1.addEventListener('click', () => {
         check = check === 1 ? 0 : 1;
 
         header.classList.toggle('bg-slate-800');
-        ul.classList.toggle('bg-slate-500')
-        ul.classList.toggle('text-white')
         header.classList.toggle('bg-blue-600');
+        ul.classList.remove('text-black');
+        ul.classList.toggle('text-white');
+        ul.classList.toggle('bg-slate-400');
 
         btn1.textContent = check === 1 ? 'Night Mode' : 'Day mode';
     });
